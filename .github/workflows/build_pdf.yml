@@ -1,0 +1,35 @@
+name: CI
+
+on:
+  push:
+    paths:
+      - '**'
+      - '!**.pdf'
+      - '!**.MD'
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Get latex container
+      run: |
+        wget https://raw.githubusercontent.com/blang/latex-docker/master/latexdockercmd.sh
+        chmod +x latexdockercmd.sh
+    - name: Build CV
+      run: |
+        ./latexdockercmd.sh pdflatex cv.tex
+    - name: Commit and push it
+      run: |
+        git config --global user.email "ivolzhev@gmail.com"
+        git config --global user.name "Ivan Volzhev"
+        
+        git remote add github "https://$GITHUB_ACTOR:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY.git"
+        git pull github ${GITHUB_REF} --ff-only
+
+        git add *.pdf
+
+        git commit -m "Update CV pdf"
+        git push github HEAD:${GITHUB_REF}
