@@ -3,7 +3,8 @@ name: CI
 on:
   push:
     paths:
-    - '!**.pdf'
+      - '**'
+      - '!**.pdf'
 
 jobs:
   build:
