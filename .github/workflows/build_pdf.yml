@@ -1,6 +1,9 @@
 name: CI
 
-on: [push]
+on:
+  push:
+    paths:
+    - '*.tex'
 
 jobs:
   build:
@@ -13,6 +16,15 @@ jobs:
       run: |
         wget https://raw.githubusercontent.com/blang/latex-docker/master/latexdockercmd.sh
         chmod +x latexdockercmd.sh
-    - name: Run a multi-line script
+    - name: Build CV
       run: |
         ./latexdockercmd.sh pdflatex cv.tex
+    - name: Commit and push it
+      run: |
+        git remote add github "https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY.git"
+        git pull github ${GITHUB_REF} --ff-only
+
+        git add *.pdf
+
+        git commit -m "Update native model"
+        git push github HEAD:${GITHUB_REF}
