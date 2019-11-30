@@ -25,7 +25,7 @@ jobs:
         git config --global user.email "ivolzhev@gmail.com"
         git config --global user.name "Ivan Volzhev"
         
-        git remote add github "https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY.git"
+        git remote add github "https://$GITHUB_ACTOR:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY.git"
         git pull github ${GITHUB_REF} --ff-only
 
         git add *.pdf
