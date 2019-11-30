@@ -9,9 +9,12 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
-    - name: Run a one-line script
-      run: echo Hello, world!
+    - name: Get latex container
+      run: |
+        wget https://raw.githubusercontent.com/blang/latex-docker/master/latexdockercmd.sh
+        chmod +x latexdockercmd.sh
     - name: Run a multi-line script
       run: |
-        echo Add other actions to build,
-        echo test, and deploy your project.
+        pwd
+        ls
+        ls cv
