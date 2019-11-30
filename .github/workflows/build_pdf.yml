@@ -5,6 +5,7 @@ on:
     paths:
       - '**'
       - '!**.pdf'
+      - '!**.MD'
 
 jobs:
   build:
@@ -30,5 +31,5 @@ jobs:
 
         git add *.pdf
 
-        git commit -m "Update native model"
+        git commit -m "Update CV pdf"
         git push github HEAD:${GITHUB_REF}
