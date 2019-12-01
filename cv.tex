@@ -29,26 +29,39 @@
 %-----       resume       ---------------------------------------------------------
 \makecvtitle
 
+\secion{Technologies}
+
 \section{Experience}
 
 \cventry{Apr 2019--Present}{Lead Software Engineer}{EPAM Systems}{Krakow}{}{
-  Working as Lead Software Engineer and Team Lead for medical insurance client from USA.\newline{}%
-  Project description:\newline{}%
+  Working as Lead Software Engineer and later Team Lead for medical insurance company from USA.\newline{}
+  My team was part of agile release train which was creating ETL system supporting complex user defined transformations including dependency-tree based mapping of properties of arbitrary paths across the tree. We have developed following subsystems:
+  \begin{itemize}
+  \item Module to support error reporting and managing retries, both automatic and manual. Source systems were able to send json describing action they attempted, result and set up the policy for retries. The module was to provide UI and backend to browse, correct and retry said actions.
+  \item Module to verify correctness of data transfer between heterogeneus datastorages, with main focus on comparing millions of rows of data between MongoDB and RDBMS (Oracle, DB2 and Postgress) with ability to extend to other kinds of data sources and to configure details of which columns should and should not be compared.
+  \end{itemize} 
   Achievements:
   \begin{itemize}
-  \item bla bla
-  \item other bla bla
+  \item In cooperation with DevOps team alligned deployment of our components with the rest of the system. Made sure that Helm deployement works smoothly and is a one-button process.
+  \item Made possible automatic import of OpenShift provided certificates into java truststore on pod startup with no root access. Enabling pod-to-pod end-to-end ssl encryption with zero configuration.
+  \item During business trip to client's office obtained knowledge on system, get to know key persons in the release train and shared this knowledge and connections locally improving communication.
+  \item Managed cross-team support crew to cover the gap in testing support during USA night hours.
+  \item Organized retrospectives in the team to timely identify blockers and bottlenecks, and give recognition to the team for achievments.
+  \item Together with other lead engineer selected addition to the team whom proved to be resourceful.
   \end{itemize}
+  Technologies: Rally, Confluence, Java, Spring, Docker, Kubernetis, Helm, MongoDB, gitlab, gitlab CI, Scala, gatling
 }
 
-\cventry{Feb 2019--Mar 2019}{Contract Software Engineer}{Akvelon}{Khrkow--Remote}{}{
-  Backend improvement for instagram like platform focused on travels and stories.\newline{}%
-  Project desctiption:\newline{}%
+\cventry{Feb 2019--Mar 2019}{Contract Software Engineer}{Akvelon}{Kharkiv--Remote}{}{
+  While waiting for visa for EPAM Poland I joined Akvelon team in efforts to improve backend for instagram like platform focused on travels and stories.\newline{}%
   Achievements:
   \begin{itemize}
-  \item some
-  \item another
+  \item By client's request migrated data and datastorage to Elastic Search 5.6.0
+  \item Introduced ES index and backend API changes to support geolocation in story in general and in particular frames of the story so story author can mark points of interests on the map.
+  \item Implemented geolocation based search so users can find points of interests near them or particular location.
+  \item Added backend support for newest iPhones allowing theme authors to optimize theme for particular aspect ratio.
   \end{itemize}
+  Technologies: Hystrix, RxJava, ElasticSearch, Redis, Heroku
 }
 
 \cventry{Jun 2017--Dec 2018}{Contract Software Engineer}{Cool Company Skandinavien AB}{Malm\"o}{}{
