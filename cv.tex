@@ -30,6 +30,10 @@
 \makecvtitle
 
 \section{Technologies}
+\cvdoubleitem{Languages}{Java, Scala, Python}{CI/CD}{Jenkins, Gitlab, Heroku}
+\cvdoubleitem{Cloud/Micro Services}{Amazon, OpenShift, Docker, Kubernetis}{DevOps}{Bash scripting, Linux}
+\cvdoubleitem{Frameworks}{Spring, DropWizard, Guice, Hystrix, Spark}{Processes}{Agile, Scrum, Kanban, SDLC}
+\cvdoubleitem{DataStorage}{RDBMSes, ElasticSearch, \mbox{Redis}, MongoDb}{Queuing}{Kafka, Amazon SQS, \mbox{ActiveMQ}}
 
 \section{Experience}
 
@@ -49,7 +53,7 @@
   \item Organized retrospectives in the team to timely identify blockers and bottlenecks, and give recognition to the team for achievments.
   \item Together with other lead engineer selected addition to the team whom proved to be resourceful.
   \end{itemize}
-  Technologies: Rally, Confluence, Java, Spring, Docker, Kubernetis, Helm, MongoDB, gitlab, gitlab CI, Scala, gatling
+  Technologies: Rally, Confluence, Java, Spring, Maven, Docker, Kubernetis, Helm, MongoDB, gitlab, gitlab CI, Scala, gatling
 }
 
 \cventry{Feb 2019--Mar 2019}{Contract Software Engineer}{Akvelon}{Kharkiv--Remote}{}{
@@ -61,81 +65,88 @@
   \item Implemented geolocation based search so users can find points of interests near them or particular location.
   \item Added backend support for newest iPhones allowing theme authors to optimize theme for particular aspect ratio.
   \end{itemize}
-  Technologies: Hystrix, RxJava, ElasticSearch, Redis, Heroku
+  Technologies: Hystrix, RxJava, Gradle, ElasticSearch, Redis, Heroku
 }
 
 \cventry{Jun 2017--Dec 2018}{Contract Software Engineer}{Cool Company Skandinavien AB}{Malm\"o}{}{
-  Scala spark geospatial processing engine.\newline{}%
-  Project description:\newline{}%
+  Worked as part of the team creating large scale proccess to compose various sources of data into coherent map for one of the biggest software and hardware companies on the market. Team I was part of was mostly concerned with consolidating address data cross-checking several in-company and external sources of address data and providing other teams with tools to complete such comparison.\newline{}%
   Achievements:%
   \begin{itemize}
-  \item some
-  \item another
+  \item Simplified and optimized code of Scala Spark job which was comparing sequential issues of US-wide address index to detect added or removed address point.
+  \item Created custom dbf file format reader for Spark significantly reducing overhead in comparison to reading full OpenGIS data format.
+  \item Integrated address comparison library created in the team into commonly used CLI tool allowing to execute library functions on given cluster and download results for non-programmer user.
+  \item Packaged address comparison library in the form which could be used in the common workflow builder and created example workflow to illustrate usage to other teams.
   \end{itemize}
+  Technologies: Scala, Spark, Gradle, Yarn, Protobuf, HDFS
 }
 
 \cventry{Jun 2016--Jun 2017}{Java Architect}{Crossover}{Tivat--Remote}{}{
-  Make tools for developers helping them to improve software quality, evaluate tech debt for software projects and build plans to deal with it.\newline{}%
-  Project description:\newline{}%
+  Worked to expand client's portfolio of tools for developers helping them to improve software quality, evaluate technical debt for software projects and build plans to deal with it.\newline{}%
+  I was involved in two projects:
+  \begin{itemize}
+  \item Service to keep track of test coverage, to create plans for the not covered parts and prioritize files or classes which will contribute most to the overall coverage. Also service alowed to export plan in a way Jira can import it and convert into tasks for respective class code owners.
+  \item Service to keep track of test runs --- individual, per-class, and per-package successes, failures, run times, and other details.
+  \end{itemize}
   Achievments:%
   \begin{itemize}
-  \item some
-  \item another
+  \item Received project from other team and make it pass SDLC quality gates making quality predictable and stable
+    \begin{itemize}
+    \item On Commit CI/CD
+    \item Database changes stored in repository as alchemy changesets
+    \item Test coverage checks as part of CI/CD pipeline
+    \end{itemize}
+  \item Migrated project from Amazon Elastic Beanstalk to docker swarm
+  \item Implemented docker-compose based automatic tests in Java TestNG runnable from gradle as part of CI/CD
   \end{itemize}
+  Tecnologies: Java, Spring, JMS, Docker, Gradle, Python, AngularJS, AWS, Amazon Beanstalk, Amazon RDS, Amazon S3, Amazon SQS
 }
 
-\cventry{Aug 2014--Apr 2016}{Expert Software Engineer}{TomTom}{\L\`od\.z}{}{
-  Take a part in development of transactional map making system.
-  My main responsibility was to improve performance of automated quality assurance process, Create approaches to properly analyze performance of this subsystem, improve performance of rules checking transaction before applying it to the map.\newline{}%
-  Project description:\newline{}%
+\cventry{Aug 2014--Apr 2016}{Expert Software Engineer}{TomTom}{\L\'od\'z}{}{
+  Took a part in development of transactional map making system.
+  I was working on improving the performance of automated map quality assurance process, making possible to run checks for big regions of the world in a reasonable time.\newline{}%
   Achievments:%
   \begin{itemize}
-  \item some
-  \item another
+  \item Proposed and implemented feature to allow quality assurance rules to specify what data do they need to download from the map and what is the depth of recursion required depending on the type of the association limiting bandwidth and memory usage during the run.
+  \item Come up with the methodology of the performance testing based on queueing theory and way to use Little's rule to explain performance results of the QA runs
+  \item Created component to distribute QA run over several nodes, improving paralelism and reducing runtime. This component was also reused by other teams proving good design and reusability.
+  \item Under my supervision other developer created automatic system to start AWS CloudFormation Stack, run performance tests and collect results with extensive metrics making it easy to asses performance changes after optimizations.
   \end{itemize}
+  Tecnologies: Java, Spring, PostGIS, PostgresSQL, R, 
 }
 
 \cventry{Feb 2013--Jul 2014}{Senior Software Engineer}{GlobalLogic}{Kyiv}{}{
   I was working in a team creating BMC MyIT product which is tool for automating IT support infrastructure including automation of processing service requests, assets management, appointments and knowledge bases.\newline{}%
   Achievements:%
   \begin{itemize}
-  \item some
-  \item another
+  \item Implemented cross-platform installer of the system 
+  \item Designed and implemented JBehave based system allowing QA team or even stakeholders to write executable User Stories
+  \item Superwised developer who was extending steps for QA team
+  \item Implemented appointment scheduling functionality for MyIT
   \end{itemize}
+  Technologies: Java, Spring, EclipseLink, Maven, PostgerSql, Oracle, VDI
 }
 
 \cventry{Jul 2012--Dec 2012}{Software Architect}{Extracode}{Kyiv}{}{
-  My responsibility is to design and develop Azure based application on ASP.NET(C\#) using MVC4
-  framework. The application is intended to collect data about gas trading from local divisions
-  and process them according to laws and regulations. The application has to give full statistics to
-  regulatory commission and also to support cash flow between gas traders.\newline{}%
-  Achievements:%
-  \begin{itemize}
-  \item some
-  \item another
-  \end{itemize}
-  Used technologies: Azure, Azure SQL Server, NHibernate, log4net, Autofac, MVC4, jQuery
+  Designing and developing Azure based cloud application based on ASP.NET(C\#) with MVC4
+  framework. Functionality of the application was to collect data about natural gas sales from local branches and process this data according to laws and regulations. As this area is strongly regulated the application was required to generate extensive reports for regulatory commission and also keep accounting for gas traders.\newline{}%
+  Technologies: Azure, Azure SQL Server, NHibernate, log4net, Autofac, MVC4, jQuery
 }
 
 \cventry{Oct 2009--Jul 2012}{Senior Software Engineer}{4shared.com}{Kyiv}{}{
   4Shared.com is a widely used file-sharing service with millions of page impressions per day. During
-  my employment on 4shared I was involved in a number of projects and tasks.\newline{}%
-  Project description:\newline{}%
+  my employment on 4shared I was involved in improving the service.\newline{}%
   Achievements:%
   \begin{itemize}
-  \item Assignment of subdomains for individual files
-  \item Improvement of 4shared SOAP interface
-  \item Development of inner usage statistics counters
-  \item Integration of OAuth into SOAP and REST interfaces
-  \item Improvement and maintenance of 4Shared Desktop package (Mac and Linux version)
-  \item Development of mass email send subsystem for ads sending
-  \item Development of username-based login system
-  \item Integration of native unix tools to transform images and documents into previews in different formats
-  \item Integration of open office to make .doc, .xls, and other formats previews.
-  \item Download All (zip) and download selected (zip) functionality
-  \item In addition, I took part in the development of b1.org website. I was working on collecting statistics, automatic selection of installation depending on client OS, and tracking of installations and uninstallations of b1 archiver.
+  \item Implemented highly requested features such as assigning domain names to files, document previews, download all or selected files as archive
+  \item Improved 4shared SOAP interface to support desktop client changes
+  \item Integrated OAuth into SOAP and REST interfaces allowing to integrate third-side clients with 4shared
+  \item Took over 4Shared Desktop package for Mac and Linux from outsourced vendor and packaged it for easy installation. Further improved the deskop client.
+  \item Developed mass email sendind subsystem
+  \item Implemented image previews and compression on upload
+  \item Implemented API to track installs/uninstall of b1 archiver tool
+  \item Implemented use of Redis for non-critical caching tasks
   \end{itemize}
-  Used technologies: Java, MySQL, hibernate, log4j, memcached, Redis, jQuery, tomcat, RESTful
+  Technologies: Java, MySQL, hibernate, log4j, memcached, Redis, jQuery, tomcat, RESTful
 }
 
 \cventry{Apr 2006--Apr 2009}{.NET Developer, Architect}{TechnoInfoService}{Kyiv}{}{
@@ -149,13 +160,13 @@
     the whereabouts of electricity meters (whether they are installed at a customer’s place or are storedin a warehouse) and their readings.
   \item Utility CRM system for electricity selling companies to manage private clients. The system implemented different models of direct and indirect payment calculation methods.
   \end{itemize}
-  Used technologies:C\#, WinForms, Microsoft SQL Server, Active X, Windows Media subsystem, DevExpress controls
+  Technologies:C\#, WinForms, Microsoft SQL Server, Active X, Windows Media subsystem, DevExpress controls
 }
 
 \cventry{2005--2006}{.NET Developer}{Art-master}{Kyiv}{}{
   I took a part in state law enforcement records management system development. Oracle queries
   optimization, rtf templating engine.\newline{}
-  Used technologies: C\#, WinForms, Oracle
+  Technologies: C\#, WinForms, Oracle
 }
 
 \cventry{2003--2005}{PL/SQL Developer}{UBIS}{Kyiv}{}{
@@ -165,7 +176,7 @@
   increasing stability of applications server.
   Some parts of logic were written as PL/SQL stored procedures, others were in Delphi application
   server.\newline{}%
-  Used technologies: Delphi, Oracle, PL/SQL
+  Technologies: Delphi, Oracle, PL/SQL
 }
 
 \section{Education}
@@ -178,21 +189,9 @@
 \cvitem{Polish}{A2+}
 \cvitemwithcomment{German}{A1}{learning}
 
-\section{Computer skills}
-\cvdoubleitem{category 1}{XXX, YYY, ZZZ}{category 4}{XXX, YYY, ZZZ}
-\cvdoubleitem{category 2}{XXX, YYY, ZZZ}{category 5}{XXX, YYY, ZZZ}
-\cvdoubleitem{category 3}{XXX, YYY, ZZZ}{category 6}{XXX, YYY, ZZZ}
-
 \section{Interests}
 \cvitem{Tourism}{Travelling to new exciting place is my long term passion which combines nice with next line}
 \cvitem{Motorcycling, sailing, flying, skiing}{Various kinds of moving around are wonderful ways to spend vacation}
 \cvitem{Computer games}{When not engaged in traveling I tend to spend time at home either playing games or}
 \cvitem{Dancing}{Various dances, mostly lindy hop and blues last years.}
-
-\section{References}
-\begin{cvcolumns}
-  \cvcolumn{Category 1}{\begin{itemize}\item Person 1\item Person 2\item Person 3\end{itemize}}
-  \cvcolumn{Category 2}{Amongst others:\begin{itemize}\item Person 1, and\item Person 2\end{itemize}(more upon request)}
-  \cvcolumn[0.5]{All the rest \& some more}{\textit{That} person, and \textbf{those} also (all available upon request).}
-\end{cvcolumns}
 \end{document}
