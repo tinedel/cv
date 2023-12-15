@@ -6,16 +6,18 @@
 %\nopagenumbers{}
 \usepackage[english]{babel}
 \usepackage[utf8]{inputenc}                       % if you are not using xelatex ou lualatex, replace by the encoding you are using
+\usepackage{lmodern}
 
 % adjust the page margins
 \usepackage[scale=0.85]{geometry}
 \setlength{\hintscolumnwidth}{3.5cm}                % if you want to change the width of the column with the dates
+\setlength{\footskip}{40.8pt}
 %\setlength{\makecvtitlenamewidth}{10cm}           % for the 'classic' style, if you want to force the width allocated to your name and avoid line breaks. be careful though, the length is normally calculated to avoid any overlap with your personal info; use this at your own typographical risks...
 
 % personal data
 \name{Ivan}{Volzhev}
 \title{Lead Software Engineer/Architect}                               % optional, remove / comment the line if not wanted
-\address{Stuart Millpad 41}{3076RK Rotterdam}{Netherlands}% optional, remove / comment the line if not wanted; the "postcode city" and "country" arguments can be omitted or provided empty
+\address{Schinnenbaan 14}{3077JJ Rotterdam}{Netherlands}% optional, remove / comment the line if not wanted; the "postcode city" and "country" arguments can be omitted or provided empty
 \phone[mobile]{+31~(61)~856~7052}                   % optional, remove / comment the line if not wanted; the optional "type" of the phone can be "mobile" (default), "fixed" or "fax"
 \email{ivolzhev@gmail.com}                               % optional, remove / comment the line if not wanted
 \social[linkedin]{ivolzhev}                        % optional, remove / comment the line if not wanted
@@ -27,207 +29,248 @@
 %----------------------------------------------------------------------------------
 \begin{document}
 %-----       resume       ---------------------------------------------------------
-\makecvtitle
+  \makecvtitle
 
-\section{Technologies}
-\cvdoubleitem{Languages}{Java, Scala, Python, Go}{CI/CD}{Jenkins, Gitlab, Heroku}
-\cvdoubleitem{Cloud/Micro Services}{Amazon, OpenShift, Docker, Kubernetes}{DevOps}{Bash scripting, Linux}
-\cvdoubleitem{Frameworks}{Spring, DropWizard, Guice, Hystrix, Spark}{Processes}{Agile, Scrum, SDLC}
-\cvdoubleitem{Data storage}{RDBMSes, ElasticSearch, \mbox{Redis}, MongoDb}{Queuing}{Kafka, Amazon SQS, \mbox{ActiveMQ}}
 
-\section{Experience}
+  \section{Technologies}\label{sec:technologies}
+    \cvdoubleitem{Languages}{Java, Scala, Python, Go}{CI/CD}{Jenkins, Gitlab, Heroku}
+    \cvdoubleitem{Cloud/Micro Services}{Amazon, OpenShift, Docker, Kubernetes}{DevOps}{Bash scripting, Linux}
+    \cvdoubleitem{Frameworks}{Spring, DropWizard, Guice, Dagger, Spark}{Processes}{Agile, Scrum, SDLC}
+    \cvdoubleitem{Data storage}{RDBMSes, Elastic Search, Trino, Pinot, Redis, MongoDb}{Queuing}{Kafka, Amazon SQS, Flink, \mbox{ActiveMQ}}
 
-\cventry{April 2022--Present}{Software Engineer}{Stealth startup}{Amsterdam (WFH)}{}{
-  Working as a software engineer to bring to our customer first class analytics on everything restaurant related:
-  delivery, quality, customer/delivery partners relations, P\&L, and more.
-}
 
-\cventry{March 2021--April 2022}{Lead Software Engineer}{EPAM Systems}{Amsterdam (WFH)}{}{
-  Joined client's team to help them deliver world's first class infrastructure for running blockchain protocols to change
-  the future of financial and other sectors of economy. I was one of the first EPAM's engineers to join their team and
-  I actively engaged with the client to create even more demand for EPAM's services.\newline{}
-  Client's stack is mostly Go so I also learned it from scratch for this role.\newline{}
-  Achievements:
-  \begin{itemize}
-    \item Added support for Solana query and transact offering which went public and has paying clients as of now.
-    \item Added support for Mina query and transact offering which is undergoing internal review and will be made available soon.
-    \item Work as part of the team to improve company's stance in query and transact offering transforming it into AWS of blockchains.
-  \end{itemize}
-  Technologies: Go, Kubernetes, Helm, Blockchain clients
-}
+  \section{Experience}\label{sec:experience}
 
-\cventry{Feb 2020--Feb 2021}{Lead Software Engineer}{EPAM Systems}{Krakow}{}{
-  Working as a Lead Software Engineer and Team Lead for a medical insurance company from USA.\newline{}
-  My team has been helping to transform existing client's intake system with a goal to improve intake pipeline throughput
-  and safeguard the system by migrating off of framework which was being shutdown. At the same time a bunch of new technologies
-  were adopted.\newline{}
-  Achievements:
-  \begin{itemize}
-    \item Developed and supported an adoption of code standards and best agile practices in the team
-    \item Mentored engineers from my team and lead them through the internal assessment process which resulted in promotion for both of them.
-    \item Built load testing framework based on Gatling to verify if system we are building will be able to perform according to the expected SLAs.
-    \item Team has completed extraction of two microservices out of monolithic, poorly documented project. Resulting microservices have got a good coverage and adhered to code standards.
-    \item Worked with other team leads to discuss services' interfaces, architecture decisions and to be sure dependencies are met or timely noted as risks.
-    \item Gave input to the scrum master when needed to improve process quality. For example, I proposed to vary retrospectives to collect team's feadback from different perspectives.
-  \end{itemize}
-  Technologies: Java, Spring, Kafka, Maven, Docker, Kubernetes, MongoDB, Oracle, gitlab CI, Scala, Gatling
-}
+    \cventry{April 2022--Present}{Senior Software Engineer}{CloudKitchens}{Amsterdam (WFH)}{}{
+      I worked on the Otter Monitor team of CloudKitchens’ startup. Our team was responsible for
+      providing our clients with tools to run their business. Our system is processing and routing food
+      orders on behalf of our clients. Being a middleware allows Otter Business Manager to be a one-stop shop for
+      business analytics for our customers. My role was to expand this offering, giving our clients
+      more instruments to answer how my business was doing and helping them make
+      better decisions based on this data.\newline{}
+Achievements:
+      \begin{itemize}
+        \item I re-engineered the reporting framework, increasing throughput for the data export capabilities, which
+        was critical for clients so they were sure they could get their data any time. This capability was
+        a signup blocker for big clients and unlocked sizeable MRR for the CloudKitchens.
+        \item Added a possibility to define reports using the same metrics definitions used in the UI, reducing maintenance costs and increasing customers’ trust in our data.
+        \item Implemented backend for the Financials application - overview of paid invoices, transactions,
+        and taxes.
+        \item Developed a Financial Reconciliation feature, allowing customers to crosscheck data from orders
+        and invoices. Implemented a backend part allowing visualization of discrepancies and letting
+        customers see the money they potentially left on the table. The financial reconciliation feature made the Advanced Analytics
+        package more attractive to the customers.
+        \item I created an eater analytics feature allowing customers to get insights into return vs. new clients, unblocking yet another view on customers’ business. This feature increased the value proposition
+        of the Advanced Analytics package.
+        \item Only in H2 2023 did enterprise in-month unique active locations grow 44.4\%, and revenue growth
+        reached 68.2\% for the Analytics product alone.
+        \item As an Initiative lead, oversaw and worked with two engineers, delivering Market Intelligence MVP
+        and several minor projects: showing service fee tax, batch financial data crosscheck report,
+        Always On and Live Alerts improvements. The market intelligence feature was attractive
+        to the existing enterprise-level customers and opened a new market for the company.
+        \item Worked with Analytics, Infra Data, and System of Records teams to ensure data quality, consistency, and availability.
+        \item Added several alerts to detect data anomalies to be able to address them before customers’
+        complaints.
+      \end{itemize}
+      Technologies: Grpc, Bazel, Dagger, Apache Pinot, Apache Flink, Trino, Java, SQL
+    }
 
-\cventry{Apr 2019--Dec 2019}{Lead Software Engineer}{EPAM Systems}{Krakow}{}{
-  Working as Lead Software Engineer and later Team Lead for a medical insurance company from USA.\newline{}
-  My team was part of an agile release train which was creating an ETL system supporting complex user defined transformations including a dependency-tree based mapping of properties of arbitrary paths across the tree. We have developed the following subsystems:
-  \begin{itemize}
-  \item Module to support error reporting and managing retries, both automatic and manual. Source systems were able to send json describing action they attempted, result and set up the policy for retries. The module was to provide UI and back-end to browse, correct and retry said actions.
-  \item Module to verify correctness of data transfer between heterogeneous datastores, with main focus on comparing millions of rows of data between MongoDB and RDBMS (Oracle, DB2 and Postgres) with ability to extend to other kinds of data sources and to configure details of which columns should and should not be compared.
-  \end{itemize} 
-  Achievements:
-  \begin{itemize}
-  \item In cooperation with the DevOps team aligned deployment of our components with the rest of the system. Made sure that Helm deployment works smoothly and is a one-button process.
-  \item Made possible automatic import of OpenShift provided certificates into java trust-store on pod startup with no root access. Enabled pod-to-pod end-to-end ssl encryption with zero configuration.
-  \item During business trip to client's office obtained knowledge on system, got to know key persons in the release train and shared this knowledge and connections locally improving communication.
-  \item Managed cross-team support crew to cover the gap in testing support during USA night hours.
-  \item Organized retrospectives in the team to timely identify blockers and bottlenecks, and give recognition to the team for achievements.
-  \item Together with other lead engineer selected addition to the team who proved to be resourceful.
-  \end{itemize}
-  Technologies: Rally, Confluence, Java, Spring, Maven, Docker, Kubernetes, Helm, MongoDB, gitlab, gitlab CI, Scala, Gatling
-}
+    \cventry{March 2021--April 2022}{Lead Software Engineer}{EPAM Systems}{Amsterdam (WFH)}{}{
+      Joined client's team to help them deliver world's first class infrastructure for running blockchain protocols to change the future of financial and other sectors of economy.
+I was one of the first EPAM's engineers to join their team and I actively engaged with the client to create even more demand for EPAM's services.\newline{}
+      Client's stack is mostly Go so I also learned it from scratch for this role.\newline{}
+      Achievements:
+      \begin{itemize}
+        \item Added support for Solana query and transact offering which went public and has paying clients as of now.
+        \item Added support for Mina query and transact offering which is undergoing internal review and will be made available soon.
+        \item Work as part of the team to improve company's stance in query and transact offering transforming it into AWS of blockchains.
+      \end{itemize}
+      Technologies: Go, Kubernetes, Helm, Blockchain clients
+    }
 
-\cventry{Feb 2019--Mar 2019}{Contract Software Engineer}{Akvelon}{Kharkiv--Remote}{}{
-  While waiting for visa for EPAM Poland I joined Akvelon team in efforts to improve back-end for Instagram like platform focused on travels and stories.\newline{}%
-  Achievements:
-  \begin{itemize}
-  \item By client's request migrated data and datastore to Elastic Search 5.6.0
-  \item Introduced ES index and back-end API changes to support geolocation of a story in general and in particular frames of the story so that the story author can mark points of interests on the map.
-  \item Implemented geolocation based search so users can find points of interest near them or near a particular location.
-  \item Added back-end support for newest iPhone allowing theme authors to optimize theme for particular aspect ratio.
-  \end{itemize}
-  Technologies: Hystrix, RxJava, Gradle, ElasticSearch, Redis, Heroku
-}
+    \cventry{Feb 2020--Feb 2021}{Lead Software Engineer}{EPAM Systems}{Krakow}{}{
+      Working as a Lead Software Engineer and Team Lead for a medical insurance company from USA.\newline{}
+      My team has been helping to transform existing client's intake system with a goal to improve intake pipeline throughput and safeguard the system by migrating off of framework which was being shutdown.
+At the same time a bunch of new technologies were adopted.\newline{}
+      Achievements:
+      \begin{itemize}
+        \item Developed and supported an adoption of code standards and best agile practices in the team
+        \item Mentored engineers from my team and lead them through the internal assessment process which resulted in promotion for both of them.
+        \item Built load testing framework based on Gatling to verify if system we are building will be able to perform according to the expected SLAs.
+        \item Team has completed extraction of two microservices out of monolithic, poorly documented project.
+Resulting microservices have got a good coverage and adhered to code standards.
+        \item Worked with other team leads to discuss services' interfaces, architecture decisions and to be sure dependencies are met or timely noted as risks.
+        \item Gave input to the scrum master when needed to improve process quality.
+For example, I proposed to vary retrospectives to collect team's feedback from different perspectives.
+      \end{itemize}
+      Technologies: Java, Spring, Kafka, Maven, Docker, Kubernetes, MongoDB, Oracle, gitlab CI, Scala, Gatling
+    }
 
-\cventry{Jun 2017--Dec 2018}{Contract Software Engineer}{Cool Company Skandinavien AB}{Malm\"o}{}{
-  Worked as part of the team creating a large scale process to compose various sources of data into a coherent map for one of the biggest software and hardware companies on the market. Team I was part of was mostly concerned with consolidating address data cross-checking several in-company and external sources of address data and providing other teams with tools to complete such comparison.\newline{}%
-  Achievements:%
-  \begin{itemize}
-  \item Simplified and optimized code of Scala Spark job which was comparing sequential issues of US-wide address index to detect added or removed address point.
-  \item Created custom dbf file format reader for Spark significantly reducing overhead in comparison to reading full OpenGIS data format.
-  \item Integrated address comparison library created by the team into commonly used CLI tool allowing non-programmers to execute library functions on given cluster and download results.
-  \item Packaged address comparison library in the form which could be used in the common workflow builder and created example workflow to illustrate usage to other teams.
-  \end{itemize}
-  Technologies: Scala, Spark, Gradle, Yarn, Protobuf, HDFS
-}
+    \cventry{Apr 2019--Dec 2019}{Lead Software Engineer}{EPAM Systems}{Krakow}{}{
+      Working as Lead Software Engineer and later Team Lead for a medical insurance company from USA.\newline{}
+      My team was part of an agile release train which was creating an ETL system supporting complex user defined transformations including a dependency-tree based mapping of properties of arbitrary paths across the tree.
+We have developed the following subsystems:
+      \begin{itemize}
+        \item Module to support error reporting and managing retries, both automatic and manual.
+Source systems were able to send json describing action they attempted, result and set up the policy for retries.
+The module was to provide UI and back-end to browse, correct and retry said actions.
+        \item Module to verify correctness of data transfer between the heterogeneous data stores, with main focus on comparing millions of rows of data between MongoDB and RDBMS (Oracle, DB2 and Postgres) with ability to extend to other kinds of data sources and to configure details of which columns should and should not be compared.
+      \end{itemize}
+      Achievements:
+      \begin{itemize}
+        \item In cooperation with the DevOps team aligned deployment of our components with the rest of the system.
+Made sure that Helm deployment works smoothly and is a one-button process.
+        \item Made possible automatic import of OpenShift provided certificates into java trust-store on pod startup with no root access.
+Enabled pod-to-pod end-to-end ssl encryption with zero configuration.
+        \item During business trip to client's office obtained knowledge on system, got to know key persons in the release train and shared this knowledge and connections locally improving communication.
+        \item Managed cross-team support crew to cover the gap in testing support during the USA night hours.
+        \item Organized retrospectives in the team to timely identify blockers and bottlenecks, and give recognition to the team for achievements.
+        \item Together with other lead engineer selected addition to the team who proved to be resourceful.
+      \end{itemize}
+      Technologies: Rally, Confluence, Java, Spring, Maven, Docker, Kubernetes, Helm, MongoDB, gitlab, gitlab CI, Scala, Gatling
+    }
 
-\cventry{Jun 2016--Jun 2017}{Java Architect}{Crossover}{Tivat--Remote}{}{
-  Worked to expand client's portfolio of tools for developers helping them to improve software quality, evaluate technical debt for software projects and build plans to deal with it.\newline{}%
-  I was involved in two projects:
-  \begin{itemize}
-  \item Service to keep track of test coverage, to create plans for the not covered parts and prioritize files or classes which will contribute most to the overall coverage. Also the service was able to export the plan in a way that Jira can import it and convert into tasks for respective class code owners.
-  \item Service to keep track of test runs --- individual, per-class, and per-package successes, failures, run times, and other details.
-  \end{itemize}
-  Achievements:%
-  \begin{itemize}
-  \item Received project from other team and make it pass SDLC quality gates making quality predictable and stable
-    \begin{itemize}
-    \item On Commit CI/CD
-    \item Database changes stored in repository as alchemy change-sets
-    \item Test coverage checks as part of CI/CD pipeline
-    \end{itemize}
-  \item Migrated project from Amazon Elastic Beanstalk to docker swarm
-  \item Implemented docker-compose based automatic tests in Java TestNG runnable from gradle as part of CI/CD
-  \end{itemize}
-  Technologies: Java, Spring, JMS, Docker, Gradle, Python, AngularJS, AWS, Amazon Beanstalk, Amazon RDS, Amazon S3, Amazon SQS
-}
+    \cventry{Feb 2019--Mar 2019}{Contract Software Engineer}{Akvelon}{Kharkiv--Remote}{}{
+      While waiting for visa for EPAM Poland I joined Akvelon team in efforts to improve back-end for Instagram like platform focused on travels and stories.\newline{}%
+      Achievements:
+      \begin{itemize}
+        \item By client's request migrated data and datastore to Elasticsearch 5.6.0
+        \item Introduced ES index and back-end API changes to support geolocation of a story in general and in particular frames of the story so that the story author can mark points of interests on the map.
+        \item Implemented geolocation based search so users can find points of interest near them or near a particular location.
+        \item Added back-end support for newest iPhone allowing theme authors to optimize theme for particular aspect ratio.
+      \end{itemize}
+      Technologies: Hystrix, RxJava, Gradle, ElasticSearch, Redis, Heroku
+    }
 
-\cventry{Aug 2014--Apr 2016}{Expert Software Engineer}{TomTom}{\L\'od\'z}{}{
-  Took a part in development of a transactional map making system.
-  I was working on improving the performance of an automated map quality assurance process, making it possible to run checks for big regions of the world in a reasonable time.\newline{}%
-  Achievements:%
-  \begin{itemize}
-  \item Proposed and implemented feature to allow quality assurance rules to specify what data do they need to download from the map and what is the depth of recursion required depending on the type of the association limiting bandwidth and memory usage during the run.
-  \item Come up with the methodology of the performance testing based on queuing theory and way to use Little's rule to explain performance results of the QA runs
-  \item Created a component to distribute QA run over several nodes, improving parallelism and reducing run time. This component was also reused by other teams proving good design and reusability.
-  \item Under my supervision another developer created an automatic system to start AWS CloudFormation Stack, run performance tests and collect results with extensive metrics making it easy to assess performance changes after optimizations.
-  \end{itemize}
-  Technologies: Java, Spring, PostGIS, Postgres, R, 
-}
+    \cventry{Jun 2017--Dec 2018}{Contract Software Engineer}{Cool Company Skandinavien AB}{Malm\"o}{}{
+      Worked as part of the team creating a large scale process to compose various sources of data into a coherent map for one of the biggest software and hardware companies on the market.
+Team I was part of was mostly concerned with consolidating address data cross-checking several in-company and external sources of address data and providing other teams with tools to complete such comparison.\newline{}%
+      Achievements:%
+      \begin{itemize}
+        \item Simplified and optimized code of Scala Spark job which was comparing sequential issues of US-wide address index to detect added or removed address point.
+        \item Created custom dbf file format reader for Spark significantly reducing overhead in comparison to reading full OpenGIS data format.
+        \item Integrated address comparison library created by the team into commonly used CLI tool allowing non-programmers to execute library functions on given cluster and download results.
+        \item Packaged address comparison library in the form which could be used in the common workflow builder and created example workflow to illustrate usage to other teams.
+      \end{itemize}
+      Technologies: Scala, Spark, Gradle, Yarn, Protobuf, HDFS
+    }
 
-\cventry{Feb 2013--Jul 2014}{Senior Software Engineer}{GlobalLogic}{Kyiv}{}{
-  I was working in a team creating BMC MyIT product which is tool a for automating IT support infrastructure including automation of processing service requests, assets management, appointments and knowledge bases.\newline{}%
-  Achievements:%
-  \begin{itemize}
-  \item Implemented cross-platform installer of the system 
-  \item Designed and implemented JBehave based system allowing QA team or even stakeholders to write executable User Stories
-  \item Supervised developer who was extending steps for QA team
-  \item Implemented appointment scheduling functionality for MyIT
-  \end{itemize}
-  Technologies: Java, Spring, EclipseLink, Maven, Postgres, Oracle, VDI
-}
+    \cventry{Jun 2016--Jun 2017}{Java Architect}{Crossover}{Tivat--Remote}{}{
+      Worked to expand client's portfolio of tools for developers helping them to improve software quality, evaluate technical debt for software projects and build plans to deal with it.\newline{}%
+      I was involved in two projects:
+      \begin{itemize}
+        \item Service to keep track of test coverage, to create plans for the not covered parts and prioritize files or classes which will contribute most to the overall coverage.
+The service was able to export the plan in a way that Jira can import it and convert into tasks for respective class code owners.
+        \item Service to keep track of test runs --- individual, per-class, and per-package successes, failures, run times, and other details.
+      \end{itemize}
+      Achievements:%
+      \begin{itemize}
+        \item Received project from other team and make it pass SDLC quality gates making quality predictable and stable
+        \begin{itemize}
+          \item On Commit CI/CD
+          \item Database changes stored in repository as alchemy change-sets
+          \item Test coverage checks as part of CI/CD pipeline
+        \end{itemize}
+        \item Migrated project from Amazon Elastic Beanstalk to docker swarm
+        \item Implemented docker-compose based automatic tests in Java TestNG runnable from gradle as part of CI/CD
+      \end{itemize}
+      Technologies: Java, Spring, JMS, Docker, Gradle, Python, AngularJS, AWS, Amazon Beanstalk, Amazon RDS, Amazon S3, Amazon SQS
+    }
 
-\cventry{Jul 2012--Dec 2012}{Software Architect}{Extracode}{Kyiv}{}{
-  Designing and developing Azure based cloud application based on ASP.NET(C\#) with MVC4
-  framework. Functionality of the application was to collect data about natural gas sales from local branches and process this data according to laws and regulations. As this area is strongly regulated the application was required to generate extensive reports for regulatory commission and also keep accounting for gas traders.\newline{}%
-  Technologies: Azure, Azure SQL Server, NHibernate, log4net, Autofac, MVC4, jQuery
-}
+    \cventry{Aug 2014--Apr 2016}{Expert Software Engineer}{TomTom}{\L\'od\'z}{}{
+      Took a part in development of a transactional map making system.
+I was working on improving the performance of an automated map quality assurance process, making it possible to run checks for big regions of the world in a reasonable time.\newline{}%
+      Achievements:%
+      \begin{itemize}
+        \item Proposed and implemented feature to allow quality assurance rules to specify what data do they need to download from the map and what is the depth of recursion required depending on the type of the association limiting bandwidth and memory usage during the run.
+        \item Come up with the methodology of the performance testing based on queuing theory and way to use Little's rule to explain performance results of the QA runs
+        \item Created a component to distribute QA run over several nodes, improving parallelism and reducing run time.
+This component was also reused by other teams proving good design and re-usability.
+        \item Under my supervision another developer created an automatic system to start AWS CloudFormation Stack, run performance tests and collect results with extensive metrics making it easy to assess performance changes after optimizations.
+      \end{itemize}
+      Technologies: Java, Spring, PostGIS, Postgres, R,
+    }
 
-\cventry{Oct 2009--Jul 2012}{Senior Software Engineer}{4shared.com}{Kyiv}{}{
-  4Shared.com is a widely used file-sharing service with millions of page impressions per day. During
-  my employment on 4shared I was involved in improving the service.\newline{}%
-  Achievements:%
-  \begin{itemize}
-  \item Implemented highly requested features such as assigning domain names to files, document previews, download all or selected files as archive
-  \item Improved 4shared SOAP interface to support desktop client changes
-  \item Integrated OAuth into SOAP and REST interfaces allowing to integrate third-side clients with 4shared
-  \item Took over 4Shared Desktop package for Mac and Linux from outsourced vendor and packaged it for easy installation. Further improved the desktop client.
-  \item Developed mass email sending subsystem
-  \item Implemented image previews and compression on upload
-  \item Implemented API to track installs/uninstall of b1 achiever tool
-  \item Implemented use of Redis for non-critical caching tasks
-  \end{itemize}
-  Technologies: Java, MySQL, hibernate, log4j, memcached, Redis, jQuery, tomcat, RESTful
-}
+    \cventry{Feb 2013--Jul 2014}{Senior Software Engineer}{GlobalLogic}{Kyiv}{}{
+      I was working in a team creating BMC MyIT product which is tool a for automating IT support infrastructure including automation of processing service requests, assets management, appointments and knowledge bases.\newline{}%
+      Achievements:%
+      \begin{itemize}
+        \item Implemented cross-platform installer of the system
+        \item Designed and implemented JBehave based system allowing QA team or even stakeholders to write executable User Stories
+        \item Supervised developer who was extending steps for QA team
+        \item Implemented appointment scheduling functionality for MyIT
+      \end{itemize}
+      Technologies: Java, Spring, EclipseLink, Maven, Postgres, Oracle, VDI
+    }
 
-\cventry{Apr 2006--Apr 2009}{.NET Developer, Architect}{TechnoInfoService}{Kyiv}{}{
-  Development and design of several projects.%
-  \begin{itemize}
-  \item Indoor Video Software system for management and demonstration of advertisements on screens
-    in public places. e.g. supermarkets, restaurants, etc. System was divided into 3 parts - Video
-    Player, Order Management system and an offline playlist management tool, that did not require a
-    permanent internet connection.
-  \item Equipment Inventory management system for electricity selling companies. The system recorded
-    the whereabouts of electricity meters (whether they are installed at a customer’s place or are stored in a warehouse) and their readings.
-  \item Utility CRM system for electricity selling companies to manage private clients. The system implemented different models of direct and indirect payment calculation methods.
-  \end{itemize}
-  Technologies:C\#, WinForms, Microsoft SQL Server, Active X, Windows Media subsystem, DevExpress controls
-}
+    \cventry{Jul 2012--Dec 2012}{Software Architect}{Extracode}{Kyiv}{}{
+      Designing and developing Azure based cloud application based on ASP.NET(C\#) with MVC4 framework.
+Functionality of the application was to collect data about natural gas sales from local branches and process this data according to laws and regulations.
+As this area is strongly regulated the application was required to generate extensive reports for regulatory commission and also keep accounting for gas traders.\newline{}%
+      Technologies: Azure, Azure SQL Server, NHibernate, log4net, Autofac, MVC4, jQuery
+    }
 
-\cventry{2005--2006}{.NET Developer}{Art-master}{Kyiv}{}{
-  I took a part in state law enforcement records management system development. Oracle queries
-  optimization, RTF templating engine.\newline{}
-  Technologies: C\#, WinForms, Oracle
-}
+    \cventry{Oct 2009--Jul 2012}{Senior Software Engineer}{4shared.com}{Kyiv}{}{
+      4Shared.com is a widely used file-sharing service with millions of page impressions per day.
+During my employment on 4shared I was involved in improving the service.\newline{}%
+      Achievements:%
+      \begin{itemize}
+        \item Implemented highly requested features such as assigning domain names to files, document previews, download all or selected files as archive
+        \item Improved 4shared SOAP interface to support desktop client changes
+        \item Integrated OAuth into SOAP and REST interfaces allowing to integrate third-side clients with 4shared
+        \item Took over 4Shared Desktop package for Mac and Linux from outsourced vendor and packaged it for easy installation.
+Further improved the desktop client.
+        \item Developed mass email sending subsystem
+        \item Implemented image previews and compression on upload
+        \item Implemented API to track installs/uninstall of b1 achiever tool
+        \item Implemented use of Redis for non-critical caching tasks
+      \end{itemize}
+      Technologies: Java, MySQL, hibernate, log4j, memcached, Redis, jQuery, tomcat, RESTful
+    }
 
-\cventry{2003--2005}{PL/SQL Developer}{UBIS}{Kyiv}{}{
-  I took part in the development of railway ticket booking system for Ukrainian Railways. My
-  responsibility was to create a system that could search existing trains, find suitable ones, book
-  tickets according to business rules. In addition I took care of inter-system communications and
-  increasing stability of applications server.
-  Some parts of logic were written as PL/SQL stored procedures, others were in Delphi application
-  server.\newline{}%
-  Technologies: Delphi, Oracle, PL/SQL
-}
+    \cventry{Apr 2006--Apr 2009}{.NET Developer, Architect}{TechnoInfoService}{Kyiv}{}{
+      Development and design of several projects.%
+      \begin{itemize}
+        \item Indoor Video Software system for management and demonstration of advertisements on screens in public places, e.g., supermarkets, restaurants, etc.
+System was divided into 3 parts - Video Player, Order Management system and an offline playlist management tool, that did not require a permanent internet connection.
+        \item Equipment Inventory management system for electricity selling companies.
+The system recorded the whereabouts of electricity meters (whether they are installed at a customer’s place or are stored in a warehouse) and their readings.
+        \item Utility CRM system for electricity selling companies to manage private clients.
+The system implemented different models of direct and indirect payment calculation methods.
+      \end{itemize}
+      Technologies:C\#, WinForms, Microsoft SQL Server, Active X, Windows Media subsystem, DevExpress controls
+    }
 
-\section{Education}
-\cventry{2000--2007}{Master Of Science}{National Technical University of Ukraine 'Kyiv Polytechnic Institute'}{Kyiv}{}{}
+    \cventry{2005--2006}{.NET Developer}{Art-master}{Kyiv}{}{
+      I took a part in state law enforcement records management system development.
+Oracle queries optimization, RTF templating engine.\newline{}
+      Technologies: C\#, WinForms, Oracle
+    }
 
-\section{Languages}
-\cvitemwithcomment{English}{B2+}{As assessed by in-house interview}
-\cvitem{Russian}{Native}
-\cvitem{Ukrainian}{Native}
-\cvitem{Polish}{A2+}
-\cvitemwithcomment{German}{A1}{learning}
+    \cventry{2003--2005}{PL/SQL Developer}{UBIS}{Kyiv}{}{
+      I took part in the development of railway ticket booking system for Ukrainian Railways.
+My responsibility was to create a system that could search existing trains, find suitable ones, book tickets according to business rules.
+In addition I took care of inter-system communications and increasing stability of applications server.
+Some parts of logic were written as PL/SQL stored procedures, others were in Delphi application server.\newline{}%
+      Technologies: Delphi, Oracle, PL/SQL
+    }
 
-\section{Interests}
-\cvitem{Tourism}{Traveling to new exciting place is my long term passion which combines nicely with next line}
-\cvitem{Motorcycling, sailing, flying, skiing}{Various kinds of moving around are wonderful ways to spend vacation}
-\cvitem{Computer games}{When not engaged in traveling I tend to spend time at home either playing games or}
-\cvitem{Dancing}{Various dances, mostly lindy hop and blues last years.}
+
+  \section{Education}\label{sec:education}
+    \cventry{2000--2007}{Master Of Science}{National Technical University of Ukraine 'Kyiv Polytechnic Institute'}{Kyiv}{}{}
+
+
+  \section{Languages}\label{sec:languages}
+    \cvitemwithcomment{English}{B2+}{As assessed by in-house interview}
+    \cvitem{Russian}{Native}
+    \cvitem{Ukrainian}{Native}
+    \cvitem{Polish}{A2+}
+    \cvitemwithcomment{German}{A1}{learning}
+
+
+  \section{Interests}\label{sec:interests}
+    \cvitem{Tourism}{Traveling to new exciting place is my long term passion which combines nicely with next line}
+    \cvitem{Motorcycling, sailing, flying, skiing}{Various kinds of moving around are wonderful ways to spend vacation}
+    \cvitem{Computer games}{When not engaged in traveling I tend to spend time at home either playing games or}
+    \cvitem{Dancing}{Various dances, mostly lindy hop and blues last years.}
 \end{document}
