@@ -1,4 +1,4 @@
-\documentclass[11pt,a4paper,sans]{moderncv}        % possible options include font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
+\documentclass[11pt,a4paper,sans]{moderncv}
 
 % moderncv themes
 \moderncvstyle{casual}
@@ -16,13 +16,13 @@
 
 % personal data
 \name{Ivan}{Volzhev}
-\title{Lead Software Engineer/Architect}                               % optional, remove / comment the line if not wanted
-\address{Schinnenbaan 14}{3077JJ Rotterdam}{Netherlands}% optional, remove / comment the line if not wanted; the "postcode city" and "country" arguments can be omitted or provided empty
+\title{Lead Software Engineer/Architect/CTO}                               % optional, remove / comment the line if not wanted
+\address{Lijnbaanstraat}{1501PA Zaandam}{Netherlands}
 \phone[mobile]{+31~(61)~856~7052}                   % optional, remove / comment the line if not wanted; the optional "type" of the phone can be "mobile" (default), "fixed" or "fax"
 \email{ivolzhev@gmail.com}                               % optional, remove / comment the line if not wanted
 \social[linkedin]{ivolzhev}                        % optional, remove / comment the line if not wanted
 \social[github]{tinedel}                              % optional, remove / comment the line if not wanted
-\photo[64pt][0.4pt]{picture}                       % optional, remove / comment the line if not wanted; '64pt' is the height the picture must be resized to, 0.4pt is the thickness of the frame around it (put it to 0pt for no frame) and 'picture' is the name of the picture file
+\photo[64pt][0.4pt]{picture.jpg}
 
 %----------------------------------------------------------------------------------
 %            content
@@ -34,14 +34,25 @@
 
   \section{Technologies}\label{sec:technologies}
     \cvdoubleitem{Languages}{Java, Scala, Python, Go}{CI/CD}{Jenkins, Gitlab, Heroku}
-    \cvdoubleitem{Cloud/Micro Services}{Amazon, OpenShift, Docker, Kubernetes}{DevOps}{Bash scripting, Linux}
+    \cvdoubleitem{Cloud/Micro Services}{Amazon, OpenShift, Docker, Kubernetes, Google Cloud, Azure}{DevOps}{Bash scripting, Linux}
     \cvdoubleitem{Frameworks}{Spring, DropWizard, Guice, Dagger, Spark}{Processes}{Agile, Scrum, SDLC}
     \cvdoubleitem{Data storage}{RDBMSes, Elastic Search, Trino, Pinot, Redis, MongoDb}{Queuing}{Kafka, Amazon SQS, Flink, \mbox{ActiveMQ}}
 
 
   \section{Experience}\label{sec:experience}
-
-    \cventry{April 2022--Present}{Senior Software Engineer}{CloudKitchens}{Amsterdam (WFH)}{}{
+    \cventry{Mar 2024--Present}{Engineering Lead}{Fishfacts B.V.}{Amsterlveen}{}{
+      I work as engineering lead for the organization providing leadership and other engineers with expertiese and direction regarding technical
+      questions and best way to build software and engineerging related processes and practices. I'm taking a part in presales, architecture,
+      implementaion and ongoing support of our products and services.\newline{}
+      Achievements:
+      \begin{itemize}
+          \item Facilitated and helped to build REM System as one of the pillars of Fishfacts business.
+          \item Participated in pre-sales, planning, and implementation of Core product, to allow customers to gather private fisheries-related data and
+          use gathered data to better plan for the future.
+          \item Planned and implemented Skipper Net - network to collect and use vessels' AIS data
+      \end{itemize}
+    }
+    \cventry{Apr 2022--Feb 2024}{Senior Software Engineer}{CloudKitchens}{Amsterdam (WFH)}{}{
       I worked on the Otter Monitor team of CloudKitchens’ startup. Our team was responsible for
       providing our clients with tools to run their business. Our system is processing and routing food
       orders on behalf of our clients. Being a middleware allows Otter Business Manager to be a one-stop shop for
@@ -75,7 +86,7 @@ Achievements:
       Technologies: Grpc, Bazel, Dagger, Apache Pinot, Apache Flink, Trino, Java, SQL
     }
 
-    \cventry{March 2021--April 2022}{Lead Software Engineer}{EPAM Systems}{Amsterdam (WFH)}{}{
+    \cventry{Mar 2021--Apr 2022}{Lead Software Engineer}{EPAM Systems}{Amsterdam (WFH)}{}{
       Joined client's team to help them deliver world's first class infrastructure for running blockchain protocols to change the future of financial and other sectors of economy.
 I was one of the first EPAM's engineers to join their team and I actively engaged with the client to create even more demand for EPAM's services.\newline{}
       Client's stack is mostly Go so I also learned it from scratch for this role.\newline{}
@@ -261,11 +272,11 @@ Some parts of logic were written as PL/SQL stored procedures, others were in Del
 
 
   \section{Languages}\label{sec:languages}
-    \cvitemwithcomment{English}{B2+}{As assessed by in-house interview}
-    \cvitem{Russian}{Native}
+    \cvitem{English}{C1}
     \cvitem{Ukrainian}{Native}
-    \cvitem{Polish}{A2+}
-    \cvitemwithcomment{German}{A1}{learning}
+    \cvitem{Russian}{Native}
+    \cvitem{Polish}{B1}
+    \cvitem{Dutch}{A2}
 
 
   \section{Interests}\label{sec:interests}
